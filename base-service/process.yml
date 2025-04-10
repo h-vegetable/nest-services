@@ -1,0 +1,17 @@
+apps:
+  - name: 'nestjs-app'  # 应用名称
+    script: 'dist/src/main.js'  # 入口文件路径
+    instances: 1  # 根据CPU核心数启动最大进程数
+    # exec_mode: 'cluster'  # 集群模式
+    autorestart: true  # 自动重启
+    watch: true  # 监听文件变化
+    ignore_watch:
+      - 'node_modules'
+      - 'static'
+      - 'mongodb'
+    max_memory_restart: '1G'  # 内存超过1G自动重启
+    env:
+      NODE_ENV: 'production'  # 生产环境
+      RUNNING_ENV: 'production'  # 生产环境
+    env_development:
+      NODE_ENV: 'development'  # 开发环境配置
