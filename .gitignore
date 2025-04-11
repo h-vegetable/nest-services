@@ -2,3 +2,7 @@ admin-server-nestjs
 
 dist
 node_modules
+
+*/mongodb
+
+/base-services/mongodb
